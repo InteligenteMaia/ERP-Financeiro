@@ -1,7 +1,7 @@
 # <div align="center">💎 ERP FINANCEIRO</div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=280&section=header&text=Sistema%20de%20Gestão%20Financeira&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Projeto%20Integrador%20•%20Banco%20de%20Dados%202025&descAlignY=52&descSize=20" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=280&section=header&text=Sistema%20de%20Gestão%20Financeira&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Projeto%20Integrador%20•%20Engenharia%20de%20Software%202025&descAlignY=52&descSize=20" width="100%"/>
 </div>
 
 <div align="center">
@@ -43,7 +43,7 @@ Sistema de **gestão financeira empresarial** desenvolvido como módulo principa
       <sub>Visualização instantânea de KPIs</sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://user-images.githubusercontent.com/74038190/216656956-f0e31901-8c24-4eba-813e-e44da8797eee.gif" width="100"><br>
+      <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="100"><br>
       <b>🔐 Segurança Máxima</b><br>
       <sub>Criptografia de ponta a ponta</sub>
     </td>
@@ -267,8 +267,8 @@ npm run test:watch
 ## 📊 **Métricas do Projeto**
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=InteligenteMaia&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&title_color=667eea&icon_color=764ba2&text_color=ffffff" width="49%"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=InteligenteMaia&theme=radical&hide_border=true&background=1a1a2e&ring=667eea&fire=764ba2&currStreakLabel=ffffff" width="49%"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=seu-usuario&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&title_color=667eea&icon_color=764ba2&text_color=ffffff" width="49%"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=seu-usuario&theme=radical&hide_border=true&background=1a1a2e&ring=667eea&fire=764ba2&currStreakLabel=ffffff" width="49%"/>
 </div>
 
 ---
@@ -359,7 +359,7 @@ Este projeto está sob licença MIT - veja [LICENSE](LICENSE) para detalhes
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer&fontSize=30&fontColor=fff&animation=twinkling" width="100%"/>
   
-  ### **Desenvolvido com 💜 pela Equipe 7 ERP Financeiro**
+  ### **Desenvolvido com 💜 pela Equipe 7 - ERP Financeiro**
   
   ⭐ **Dê uma estrela se você gostou!** ⭐
   
