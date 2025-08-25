@@ -267,8 +267,8 @@ npm run test:watch
 ## 📊 **Métricas do Projeto**
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=seu-usuario&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&title_color=667eea&icon_color=764ba2&text_color=ffffff" width="49%"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=seu-usuario&theme=radical&hide_border=true&background=1a1a2e&ring=667eea&fire=764ba2&currStreakLabel=ffffff" width="49%"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=InteligenteMaia&show_icons=true&theme=radical&hide_border=true&bg_color=1a1a2e&title_color=667eea&icon_color=764ba2&text_color=ffffff" width="49%"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=InteligenteMaia&theme=radical&hide_border=true&background=1a1a2e&ring=667eea&fire=764ba2&currStreakLabel=ffffff" width="49%"/>
 </div>
 
 ---
