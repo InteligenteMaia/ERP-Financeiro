@@ -1,7 +1,7 @@
 # <div align="center">💎 ERP FINANCEIRO</div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=280&section=header&text=Sistema%20de%20Gestão%20Financeira&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Projeto%20Integrador%20•%20Banco%20de%Dados%202025&descAlignY=52&descSize=20" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=280&section=header&text=Sistema%20de%20Gestão%20Financeira&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Projeto%20Integrador%20•%20Banco%20de%20Dados%202025&descAlignY=52&descSize=20" width="100%"/>
 </div>
 
 <div align="center">
