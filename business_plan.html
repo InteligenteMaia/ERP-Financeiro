@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo Gestão + | Business Plan</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #1e293b;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        /* Liquid Glass Background Animation */
+        .liquid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .liquid-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.8) 0%, transparent 50%);
+            animation: liquidMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes liquidMove {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.8;
+            }
+            33% {
+                transform: scale(1.1) rotate(120deg);
+                opacity: 0.6;
+            }
+            66% {
+                transform: scale(0.9) rotate(240deg);
+                opacity: 0.9;
+            }
+        }
+        
+        /* Glassmorphism Container */
+        .glass-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #475569;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .university-info {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        .university-info h3 {
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.8rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-item strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 2rem;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #334155;
+            margin: 2rem 0 1rem 0;
+            position: relative;
+        }
+        
+        .section p, .section li {
+            color: #475569;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        
+        /* Special Sections */
+        .resumo {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+        
+        .sumario-executivo {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Lists */
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        ul li::marker {
+            color: #667eea;
+        }
+        
+        /* Quote Block */
+        .quote {
+            background: rgba(255, 255, 255, 0.25);
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 15px 15px 0;
+            backdrop-filter: blur(15px);
+            font-style: italic;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: rgba(102, 126, 234, 0.3);
+            font-family: serif;
+        }
+        
+        /* Table Styling */
+        .table-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        
+        th {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+            color: #1e293b;
+            font-weight: 700;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #475569;
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Stars Rating */
+        .stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+        }
+        
+        /* Tags and Badges */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Key Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .glass-container {
+                margin: 1rem;
+                border-radius: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.85rem;
+            }
+            
+            th, td {
+                padding: 0.6rem;
+            }
+        }
+        
+        /* Animation for sections */
+        .section {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+        .section:nth-child(9) { animation-delay: 0.9s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="liquid-bg"></div>
+    
+    <div class="glass-container">
+        <header class="header">
+            <h1>Tudo Gestão +</h1>
+            <p class="subtitle">Sistema Financeiro ERP para Micro e Pequenas Empresas</p>
+            
+            <div class="university-info">
+                <h3>Universidade Nove de Julho – UNINOVE</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Curso:</strong> Tecnologia em Banco de Dados
+                    </div>
+                    <div class="info-item">
+                        <strong>Disciplina:</strong> Projeto Integrador
+                    </div>
+                    <div class="info-item">
+                        <strong>Orientador:</strong> José Romualdo da Costa Filho
+                    </div>
+                    <div class="info-item">
+                        <strong>Local e Data:</strong> São Paulo, 30 de Agosto de 2025
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="section resumo">
+                <h2>📌 Resumo</h2>
+                <p>Este projeto integrador apresenta o sistema <strong>Tudo Gestão +</strong>, um ERP voltado para micro e pequenas empresas, prestadores de serviços e escritórios de contabilidade.</p>
+                
+                <p>O problema central identificado é a dificuldade de controle financeiro e organizacional em negócios que ainda utilizam planilhas ou métodos manuais.</p>
+                
+                <p>A solução proposta centraliza a gestão em uma única plataforma, reduzindo retrabalho e erros.</p>
+                
+                <div class="tags-container">
+                    <span class="tag">ERP</span>
+                    <span class="tag">Gestão Financeira</span>
+                    <span class="tag">Micro e Pequenas Empresas</span>
+                    <span class="tag">Automação</span>
+                </div>
+            </section>
+
+            <section class="section resumo">
+                <h2>📌 Abstract</h2>
+                <p>This integrative project presents <strong>Tudo Gestão +</strong>, an ERP system designed for micro and small businesses, service providers and accounting offices.</p>
+                
+                <p>The proposed solution centralizes management in a single platform, reducing rework and errors.</p>
+                
+                <div class="tags-container">
+                    <span class="tag">ERP</span>
+                    <span class="tag">Financial Management</span>
+                    <span class="tag">Small Business</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>1. Introdução</h2>
+                <p>Administrar um pequeno negócio no Brasil não é tarefa simples. Muitos empreendedores ainda recorrem a <strong>planilhas ou anotações manuais</strong>, aumentando erros e dificultando o planejamento estratégico.</p>
+                
+                <p>O <strong>Tudo Gestão +</strong> surge como uma solução <strong>ERP simples, acessível e escalável</strong>, permitindo centralizar controles em uma plataforma única.</p>
+            </section>
+
+            <section class="section sumario-executivo">
+                <h2>2. Sumário Executivo</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">80%</span>
+                        <span class="metric-label">Redução de Tempo</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">R$ 49,90</span>
+                        <span class="metric-label">Preço Mensal</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">3</span>
+                        <span class="metric-label">Públicos-Alvo</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><strong>Nome do sistema:</strong> Tudo Gestão +</li>
+                    <li><strong>Tipo de sistema:</strong> ERP (Enterprise Resource Planning)</li>
+                    <li><strong>Público-alvo:</strong> Micro e pequenas empresas, prestadores de serviços e escritórios de contabilidade</li>
+                    <li><strong>Problema que resolve:</strong> Controle financeiro disperso em planilhas e métodos manuais</li>
+                    <li><strong>Diferenciais competitivos:</strong> Interface simples, baixo custo, relatórios automáticos e dashboards inteligentes</li>
+                    <li><strong>Benefícios:</strong> Redução de até <strong>80%</strong> no tempo de controles manuais, maior precisão e confiabilidade nos dados, escalabilidade modular</li>
+                </ul>
+
+                <div class="quote">
+                    O Tudo Gestão + é o ERP simples e acessível que centraliza sua gestão financeira, economiza tempo e ajuda na tomada de decisões rápidas e seguras.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>3. Análise de Mercado</h2>
+                
+                <h3>Tendências</h3>
+                <ul>
+                    <li>Digitalização contábil crescente no Brasil</li>
+                    <li>Obrigatoriedade de <strong>notas fiscais eletrônicas</strong></li>
+                </ul>
+
+                <h3>Concorrentes</h3>
+                <ul>
+                    <li>Omie</li>
+                    <li>Conta Azul</li>
+                    <li>eGestor ERP</li>
+                    <li>TOTVS/Protheus</li>
+                </ul>
+
+                <h3>Cliente Ideal</h3>
+                <div class="quote">
+                    João, 40 anos, dono de uma cafeteria. Usa planilhas para controlar fluxo de caixa, mas precisa de um sistema <strong>simples e barato</strong> para relatórios automáticos e gestão eficiente.
+                </div>
+
+                <h3>Oportunidades & Ameaças</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card" style="border: 2px solid #10b981;">
+                        <span class="metric-label" style="color: #10b981;">OPORTUNIDADES</span>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Poucos ERPs realmente simples e acessíveis</p>
+                    </div>
+                    <div class="metric-card" style="border: 2px solid #ef4444;">
+                        <span class="metric-label" style="color: #ef4444;">AMEAÇAS</span>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Concorrentes consolidados e resistência inicial</p>
+                    </div>
+                </div>
+
+                <h3>📊 Tabela Comparativa</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sistema</th>
+                                <th>Preço Médio</th>
+                                <th>Foco Principal</th>
+                                <th>Facilidade de Uso</th>
+                                <th>Relatórios Inteligentes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(102, 126, 234, 0.1);">
+                                <td><strong>Tudo Gestão+</strong></td>
+                                <td><strong>R$ 49,90/mês</strong></td>
+                                <td>Micro/pequenas empresas</td>
+                                <td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+                                <td><strong>Sim</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Omie</td>
+                                <td>R$ 89,90/mês</td>
+                                <td>Financeiro/ERP</td>
+                                <td><span class="stars">⭐⭐⭐</span></td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>Conta Azul</td>
+                                <td>R$ 149,90/mês</td>
+                                <td>Financeiro/ERP</td>
+                                <td><span class="stars">⭐⭐⭐</span></td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>eGestor ERP</td>
+                                <td>R$ 79,90/mês</td>
+                                <td>Financeiro</td>
+                                <td><span class="stars">⭐⭐⭐⭐</span></td>
+                                <td>Não</td>
+                            </tr>
+                            <tr>
+                                <td>TOTVS/Protheus</td>
+                                <td>Sob consulta</td>
+                                <td>Contabilidade</td>
+                                <td><span class="stars">⭐⭐</span></td>
+                                <td>Sim</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>4. Plano de Marketing</h2>
+                
+                <ul>
+                    <li><strong>Estratégias:</strong> Inbound Marketing, redes sociais, parceria com Sebrae</li>
+                    <li><strong>Posicionamento:</strong> Simples, acessível e confiável</li>
+                    <li><strong>Canais:</strong> Instagram, Google Ads, eventos de contabilidade, WhatsApp</li>
+                </ul>
+
+                <h3>Proposta de Valor</h3>
+                <div class="quote">
+                    Mais controle, menos complicação: sua empresa organizada sem precisar de planilhas.
+                </div>
+
+                <h3>Slogan</h3>
+                <div class="quote" style="text-align: center; font-size: 1.5rem; font-weight: 700; color: #667eea;">
+                    Controle fácil, decisão rápida.
+                </div>
+
+                <p><strong>Protótipo:</strong> Wireframes no Figma e simulação no Canva</p>
+            </section>
+
+            <section class="section">
+                <h2>5. Plano Operacional</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">Scrum</span>
+                        <span class="metric-label">Metodologia</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">R$ 2.000</span>
+                        <span class="metric-label">Custos Estimados</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">7</span>
+                        <span class="metric-label">Membros da Equipe</span>
+                    </div>
+                </div>
+
+                <h3>Time e Funções</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Membro</th>
+                                <th>Função</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Michael</strong></td>
+                                <td>Tech Lead</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Larissa</strong></td>
+                                <td>Documentação/Arquitetura</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Najla</strong></td>
+                                <td>UX/UI</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lucas</strong></td>
+                                <td>Modelagem de Dados</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Felipe & Thaynara</strong></td>
+                                <td>Frontend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nathália</strong></td>
+                                <td>Backend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rubens</strong></td>
+                                <td>Banco de Dados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Tecnologias</h3>
+                <div class="tags-container">
+                    <span class="tag">React (Frontend)</span>
+                    <span class="tag">Node.js (Backend)</span>
+                    <span class="tag">PostgreSQL (Database)</span>
+                    <span class="tag">Heroku/AWS (Hospedagem)</span>
+                </div>
+
+                <p><strong>Cronograma:</strong> Entregas semanais de agosto a dezembro/2025</p>
+            </section>
+
+            <section class="section">
+                <h2>6. Plano Financeiro</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">R$ 300</span>
+                        <span class="metric-label">Custos Mensais</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">20</span>
+                        <span class="metric-label">Ponto de Equilíbrio</span>
+                    </div>
+                </div>
+
+                <h3>Cenários de Receita</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cenário</th>
+                                <th>Clientes</th>
+                                <th>Receita Mensal</th>
+                                <th>Lucro Mensal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(16, 185, 129, 0.1);">
+                                <td><strong>Otimista</strong></td>
+                                <td>200</td>
+                                <td>R$ 9.980,00</td>
+                                <td><strong>R$ 9.680,00</strong></td>
+                            </tr>
+                            <tr style="background: rgba(245, 158, 11, 0.1);">
+                                <td><strong>Realista</strong></td>
+                                <td>80</td>
+                                <td>R$ 3.992,00</td>
+                                <td><strong>R$ 3.692,00</strong></td>
+                            </tr>
+                            <tr style="background: rgba(239, 68, 68, 0.1);">
+                                <td><strong>Pessimista</strong></td>
+                                <td>20</td>
+                                <td>R$ 998,00</td>
+                                <td><strong>R$ 698,00</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><strong>Investimento Inicial:</strong> Notebooks, estudo, hospedagem fictícia</p>
+            </section>
+
+            <section class="section">
+                <h2>7. Cenários e Riscos</h2>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Risco</th>
+                                <th>Descrição</th>
+                                <th>Mitigação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Técnicos</strong></td>
+                                <td>Falhas de integração</td>
+                                <td>Testes automáticos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mercado</strong></td>
+                                <td>Concorrência forte</td>
+                                <td>Foco em microempresas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gestão</strong></td>
+                                <td>Possíveis atrasos</td>
+                                <td>Reuniões semanais</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>8. Conclusão</h2>
+                <p>O <strong>Tudo Gestão+</strong> é uma solução estratégica para <strong>micro e pequenas empresas</strong>, oferecendo simplicidade, baixo custo e inteligência financeira.</p>
+                
+                <p>Além de reduzir o tempo com controles manuais, aumenta a competitividade e garante crescimento sustentável.</p>
+
+                <div class="quote" style="text-align: center; font-size: 1.3rem; font-weight: 700;">
+                    Uma solução que transforma planilhas em inteligência de negócios.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>9. Referências</h2>
+                <ul>
+                    <li>CANVA. Protótipo ERP Genérico. 2025. Disponível em: <em>canva.com</em></li>
+                    <li>UNINOVE. Manual de orientação para trabalhos acadêmicos – ABNT. 2025</li>
+                    <li>SABEDORIA ESSENCIAL PARA NEGÓCIOS. <em>Como elaborar um TAP de Projetos</em>. YouTube, 2024</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 Tudo Gestão + | Universidade Nove de Julho – UNINOVE</p>
+            <p>Projeto Integrador - Tecnologia em Banco de Dados</p>
+        </footer>
+    </div>
+</body>
+</html>
